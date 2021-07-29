@@ -28,9 +28,26 @@ function countWord(kalimat) {
 console.log(countWord("hari ini hari kamis"))
 
 // Nomor 3
-function countvocal(word) {
-    
+function countVocal(word){
+    let vocal = 'aiueo'
+    let countVocal = 0
+    let countKonsonan = 0
+    if (typeof word === 'string') {
+        for (let i = 0 ; i < word.length ; i++) {
+            if ( word[i] === 'a'|| word[i] === 'i' || word[i] === 'u' || word[i] === 'e' || word[i] === 'o'){
+                countVocal++
+            } else if(word[i] !== ' '){
+                countKonsonan++
+            }
+        }
+    } else if(typeof word === 'number'){
+        return "error"
+    }
+    return `jumlah huruf vokal: ${countVocal}. jumlah konsonan : ${countKonsonan}`
+
 }
+console.log(countVocal('renita'));
+console.log(countVocal(1234));
 // Nomor 4
 function name(me) {
     let temp = ""
@@ -74,4 +91,26 @@ function pecahCoin (uang) {
 console.log(pecahCoin(5500))
 
 // Nomor 7
+ var star = '';
+ for (var i = 0 ; i < 5 ; i++) {
+     for(var j = 0 ; j <= i ; j++){
+         star += '*';
+     }
+     star += '\n';
+ }
+console.log(star)
 
+// Nomor 8
+var row = 5;
+    var output = "";
+    for (var i = 0 ; i < row ; i++ ) {
+        var temp = "";
+        for (let j = 0 ; j < (row - i - 1); j++){
+            temp += " ";
+        }
+            for (var k = 1; k <= 2 * i + 1 ; k++){
+                output += "*";
+            }
+            console.log(temp + output);
+            output = "";
+        }
